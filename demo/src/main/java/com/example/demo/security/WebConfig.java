@@ -19,8 +19,10 @@ public class WebConfig  {
             .cors(cors -> cors.configure(http))
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(authorizeConfig ->
-                authorizeConfig.requestMatchers(HttpMethod.POST, 
-                    "/clientes").permitAll()
+                authorizeConfig
+                    .requestMatchers(HttpMethod.POST,"/clientes").permitAll()
+                    .requestMatchers(HttpMethod.PUT,"/clientes").permitAll()
+                
             ).build();
     }
 }
