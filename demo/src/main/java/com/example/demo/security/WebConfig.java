@@ -22,6 +22,7 @@ public class WebConfig  {
                 authorizeConfig
                     .requestMatchers(HttpMethod.POST,"/clientes").permitAll()
                     .requestMatchers(HttpMethod.PUT,"/clientes").permitAll()
+                    .requestMatchers(HttpMethod.DELETE,"/clientes/{id:[0-9]+}").permitAll()
                 
             ).build();
     }

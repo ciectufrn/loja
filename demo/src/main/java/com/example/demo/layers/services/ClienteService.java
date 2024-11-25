@@ -55,4 +55,17 @@ public class ClienteService {
         return clienteRepository.save(cliente);
     }
 
+    public void removerCliente(Long idCliente) throws ValidacaoException  {
+        if(idCliente == null) {
+            throw new ValidacaoException("ID é nulo");
+        }
+
+        Optional<Cliente> _cliente = clienteRepository.findById(idCliente);
+        if(_cliente.isEmpty()) {
+            throw new ValidacaoException("ID não existe");
+        }
+        
+        clienteRepository.deleteById(idCliente);        
+    }
+
 }
