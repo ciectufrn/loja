@@ -21,4 +21,9 @@ public class CompraController {
     public List<Object[]> obterComprasPorCliente(@PathVariable String nomeCliente) {
         return compraService.obterProdutosEDataCompra(nomeCliente);
     }
+
+    @GetMapping("/todas")
+    public List<Object[]> obterTodasAsCompras() {
+        return compraService.obterTodasAsCompras();
+    }
 }

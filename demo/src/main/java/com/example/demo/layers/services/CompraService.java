@@ -16,4 +16,8 @@ public class CompraService {
     public List<Object[]> obterProdutosEDataCompra(String nomeCliente) {
         return compraRepository.findProdutosAndDataCompraByClienteNome(nomeCliente);
     }
+
+    public List<Object[]> obterTodasAsCompras() {
+        return compraRepository.findAllCompras();
+    }
 }

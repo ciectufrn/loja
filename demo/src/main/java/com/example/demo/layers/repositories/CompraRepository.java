@@ -20,4 +20,7 @@ public interface CompraRepository extends JpaRepository<Compra, Long> {
                    "WHERE cliente.nome = :nome", nativeQuery = true)
     List<Object[]> findProdutosAndDataCompraByClienteNome(@Param("nome") String nome);
 
+    @Query(value = "SELECT * FROM compra", nativeQuery = true)
+    List<Object[]> findAllCompras();
+
 }
