@@ -23,6 +23,8 @@ public class WebConfig  {
                     .requestMatchers(HttpMethod.POST,"/clientes").permitAll()
                     .requestMatchers(HttpMethod.PUT,"/clientes").permitAll()
                     .requestMatchers(HttpMethod.DELETE,"/clientes/{id:[0-9]+}").permitAll()
+                    .requestMatchers(HttpMethod.GET, "/compras/{nome:.*}").permitAll()
+
                 
             ).build();
     }
